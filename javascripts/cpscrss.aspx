@@ -9,8 +9,8 @@
 
 
     ' RSS Feed URL.
-'   Dim strXmlSrc  As String = "https://www.cpsc.gov/Newsroom/CPSC-RSS-Feed/Recalls-RSS/"
-    Dim strXmlSrc  As String = "https://cpsc.gov/Newsroom/CPSC-RSS-Feed/Recalls-RSS/"
+      Dim strXmlSrc  As String = "https://www.cpsc.gov/Newsroom/CPSC-RSS-Feed/Recalls-RSS/"
+    ' Dim strXmlSrc  As String = "https://cpsc.gov/Newsroom/CPSC-RSS-Feed/Recalls-RSS/"
 
     ' Path to XSL file.  
     Dim strXslFile As String = Server.MapPath("cpscrss.xsl")
