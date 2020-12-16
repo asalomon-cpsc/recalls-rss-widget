@@ -15,7 +15,7 @@
     'System.Net.ServicePointManager.SecurityProtocol = System.Net.SecurityProtocolType.Ssl3 Or System.Net.SecurityProtocolType.Tls
     Dim client As System.Net.WebClient = New System.Net.WebClient()
     System.Net.ServicePointManager.Expect100Continue = True
-    System.Net.ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12
+    System.Net.ServicePointManager.SecurityProtocol = System.Net.SecurityProtocolType.Tls12
     System.Net.ServicePointManager.ServerCertificateValidationCallback = Function(sender, certificate, chain, errors) True
     Dim reply As String = client.DownloadString(strXmlSrc)
 
