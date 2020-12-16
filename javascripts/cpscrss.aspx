@@ -9,15 +9,19 @@
 
 
     ' RSS Feed URL.
-      Dim strXmlSrc  As String = "https://www.cpsc.gov/Newsroom/CPSC-RSS-Feed/Recalls-RSS/"
-    ' Dim strXmlSrc  As String = "https://cpsc.gov/Newsroom/CPSC-RSS-Feed/Recalls-RSS/"
+     ' Dim strXmlSrc  As String = "https://www.cpsc.gov/Newsroom/CPSC-RSS-Feed/Recalls-RSS/"
+     Dim strXmlSrc  As String = "https://cpsc.gov/Newsroom/CPSC-RSS-Feed/Recalls-RSS/"
+	
     System.Net.ServicePointManager.SecurityProtocol = System.Net.SecurityProtocolType.Ssl3 Or System.Net.SecurityProtocolType.Tls
+    Dim client As System.Net.WebClient = New System.Net.WebClient()
+    Dim reply As String = client.DownloadString(strXmlSrc)
+
     ' Path to XSL file.  
     Dim strXslFile As String = Server.MapPath("cpscrss.xsl")
 
     ' Load XML file into the XmlDocument object.
     Dim myXmlDoc As XmlDocument = New XmlDocument()
-    myXmlDoc.Load(strXmlSrc)
+    myXmlDoc.LoadXml(reply)
 
     ' Load XSL file into the XslTransform object.
     Dim myXslDoc As XslTransform = New XslTransform()
